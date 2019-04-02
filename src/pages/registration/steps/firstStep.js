@@ -3,18 +3,13 @@ import { Title } from 'utils/styled'
 import FormTextField from 'utils/components/formTextField'
 import NavigationButtons from '../components/navigationButtons'
 import { reduxForm, Field } from 'redux-form'
-import qs from 'qs'
 
 const required = value => value ? undefined : 'Required'
 
 const FirstStep = props => {
-    const { handleSubmit, history } = props
+    const { handleSubmit, nextStep } = props
     const submitFirstStep = values => {
-        console.log('values', values)
-        history.push({
-            pathname:'/registration',
-            search: qs.stringify({step: 2})
-        })
+        nextStep()
     }
     return (
         <Fragment>

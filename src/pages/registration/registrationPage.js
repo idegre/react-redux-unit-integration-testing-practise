@@ -14,14 +14,16 @@ const stepComponents = {
 
 class RegistrationPage extends Component {
     render() {
-        const { location : { search }, history } = this.props
+        const { location : { search }, toStep } = this.props
         const currentStep = parseInt(qs.parse(search.substring(1)).step)
         const CurrentStepForm = stepComponents[currentStep]
+        const nextStep = () => toStep(currentStep + 1)
+        const prevStep = () => toStep(currentStep - 1)
         return (
             <Layout>
                 <FormHolder>
                     <StepFinder steps={Object.keys(stepComponents)} step={currentStep} />
-                    <CurrentStepForm  />
+                    <CurrentStepForm  nextStep={ nextStep } prevStep={ prevStep } />
                 </FormHolder>
             </Layout>
         );

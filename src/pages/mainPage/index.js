@@ -1,9 +1,9 @@
-import { startRegistration } from 'lib/registration/actions'
+import { goToStep } from 'lib/registration/actions'
 import { connect } from 'react-redux';
 import MainPage from './mainPage';
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    startRegistration: () => dispatch(startRegistration(ownProps.history))
+  goToStep: () => dispatch(goToStep(ownProps.history, 1))
   })
   
   const mapStateToProps = (state) => ({

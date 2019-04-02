@@ -1,6 +1,9 @@
 import qs from 'qs'
+import {
+    ADVANCE_STEP
+} from './constants'
 
-export const startRegistration = history => () => history.push({
+export const goToStep = (history, step) => () => history.push({
     pathname:'/registration',
-    search: qs.stringify({step: 1})
+    search: qs.stringify({ step })
 })
