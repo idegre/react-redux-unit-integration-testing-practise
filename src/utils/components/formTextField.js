@@ -8,19 +8,24 @@ const Holder = styled.div`
     input {
         width: 100%;
     }
+    textarea {
+        width: 100%;
+    }
 `
 
 const Error = styled.div`
     color: red;
 `
 
-export default ({ meta: { error, touched }, title, input, required }) => {
+export default ({ meta: { error, touched }, title, input, required, type }) => {
     return (
         <Holder>
             <div>
                 <span>{title}</span>{required && <span>*</span>}
             </div>
-            <input {...input} type="text"/>
+            {type === 'textarea'
+                ? <textarea {...input} type={ type }/>
+                : <input {...input} type={ type }/>}
             {touched && <Error>{error}</Error>}
         </Holder>
     )

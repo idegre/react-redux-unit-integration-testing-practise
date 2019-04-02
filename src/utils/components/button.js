@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types'
 
 const ButtonContainer = styled.div`
-    background-color: ${({clear}) => clear ? 'white' : 'black'};;
-    color: ${({clear}) => clear ? 'black' : 'white'};;
+    background-color: ${({clear}) => clear ? 'white' : 'black'};
+    color: ${({clear}) => clear ? 'black' : 'white'};
     cursor: pointer;
     padding: 12px;
     user-select: none;
