@@ -1,4 +1,4 @@
-###A test project
+##A test project
 
 - Includes redux, thunk & action-creator
 - unit testing with jest & enzyme
