@@ -4,11 +4,11 @@ import { mount } from 'enzyme';
 
 describe('mainPage tests', () => {
     let props = {};
-    const startRegistration = jest.fn()
+    const goToStep = jest.fn()
     let wrapper;
     beforeEach(()=>{
         props = {
-            startRegistration
+            goToStep
         }
         wrapper = mount(<MainPage {...props} />);
     })
@@ -19,7 +19,7 @@ describe('mainPage tests', () => {
         expect(wrapper)
     });
     it('renders withouth calling prop functions', () => {
-        expect(startRegistration).not.toBeCalled()
+        expect(goToStep).not.toBeCalled()
     })
     it('has all elements', () => {
         const title = wrapper.find('Title')
@@ -32,6 +32,6 @@ describe('mainPage tests', () => {
     it('redirects on button click', () => {
         const button = wrapper.find('#startButton')
         button.simulate('click')
-        expect(startRegistration).toBeCalledTimes(1)
+        expect(goToStep).toBeCalledTimes(1)
     })
 })
