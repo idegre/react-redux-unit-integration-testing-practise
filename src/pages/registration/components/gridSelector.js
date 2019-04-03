@@ -52,6 +52,7 @@ const GridSelector = ({ meta: { error, touched }, title, input: {onChange, value
                             : onChange(JSON.stringify([ ...valueArray, option ]))
                         return <SingleOption
                             onClick={ change }
+                            key={ option }
                             selected={ selected }>{ option }</SingleOption>
                     })
                     : 'no options avaliable' }
