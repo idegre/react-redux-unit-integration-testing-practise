@@ -5,6 +5,7 @@ import FormTextField from 'utils/components/formTextField'
 import GridSelector from './../components/gridSelector'
 import NavigationButtons from '../components/navigationButtons'
 import jsToolsOtions from 'utils/jsToolsOptions'
+import { SkipLabel } from './../styled'
 
 const SecondStep = props => {
     const { handleSubmit, nextStep, prevStep } = props
@@ -29,8 +30,9 @@ const SecondStep = props => {
                     type="textarea"
                     component={FormTextField}
                 />
-            <NavigationButtons backFunc={prevStep}/>
+                <NavigationButtons backFunc={prevStep}/>
             </form>
+            <SkipLabel onClick={handleSubmit(submitSecondStep)}>Skip this step</SkipLabel>
         </Fragment>
     )
 }

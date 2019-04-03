@@ -16,3 +16,9 @@ export const FormHolder = styled.div`
 export const SpacedDiv = styled.div`
     margin: 30px 0px:
 `
+
+export const SkipLabel = styled.div`
+    font-weight: bold;
+    margin: 20px;
+    cursor: pointer;
+`
