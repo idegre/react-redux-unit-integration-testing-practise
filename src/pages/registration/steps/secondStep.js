@@ -7,9 +7,8 @@ import NavigationButtons from '../components/navigationButtons'
 import jsToolsOtions from 'utils/jsToolsOptions'
 
 const SecondStep = props => {
-    const { handleSubmit, nextStep } = props
+    const { handleSubmit, nextStep, prevStep } = props
     const submitSecondStep = values => {
-        console.log(values)
         nextStep()
     }
     return (
@@ -30,7 +29,7 @@ const SecondStep = props => {
                     type="textarea"
                     component={FormTextField}
                 />
-            <NavigationButtons/>
+            <NavigationButtons backFunc={prevStep}/>
             </form>
         </Fragment>
     )
@@ -39,4 +38,5 @@ const SecondStep = props => {
 export default reduxForm({
     form: 'registrationForm',
     destroyOnUnmount: false,
+    initialValues: { jsTools: '[]' }
   })(SecondStep)
