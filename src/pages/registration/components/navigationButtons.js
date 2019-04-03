@@ -21,7 +21,7 @@ const Holder = styled.div`
     }
 `
 
-export default ({forwardFunc, backFunc}) => <Holder>
-    <Button clear text="Back" onClick={backFunc}/>
+export default ({backFunc}) => <Holder>
+    <Button clear text="Back" onClick={ backFunc }/>
     <input className="button" text="Continue" type="submit" value="Continue"/>
 </Holder>
