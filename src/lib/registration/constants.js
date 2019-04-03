@@ -1,3 +1,3 @@
 export default {
-    ADVANCE_STEP: 'ADVANCE_STEP'
+    SAVE_VALUES: 'SAVE_VALUES'
 }
