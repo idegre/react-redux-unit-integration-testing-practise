@@ -12,3 +12,7 @@ export const FormHolder = styled.div`
         width: 100%;
     }
 `
+
+export const SpacedDiv = styled.div`
+    margin: 30px 0px:
+`

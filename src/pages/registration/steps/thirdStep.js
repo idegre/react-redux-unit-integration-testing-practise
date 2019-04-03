@@ -4,19 +4,24 @@ import { Title } from 'utils/styled'
 import FormSelectField from 'utils/components/formSelectField'
 import NavigationButtons from '../components/navigationButtons'
 import { required } from 'utils/formValidations'
+import { SpacedDiv } from './../styled'
 
-const RadioInput = ({input, title}) => <div>{title}<input {...input} value={false} type="radio" /><input {...input} value={true} type="radio" /></div>
+const RadioInput = ({input, title}) => <div>
+    {title}
+    <SpacedDiv>
+        <input onChange={() => input.onChange(1)} value={'1'} checked={input.value === '1'} type="radio" />yes
+        <input onChange={() => input.onChange(0)} value={'0'} checked={input.value === '0'} type="radio" />no
+    </SpacedDiv>
+</div>
 
 const ThirdStep = props => {
     const { handleSubmit, submitValues, prevStep } = props
     const submitSecondStep = values => {
-        console.log(values)
         submitValues(values)
     }
     return (
         <Fragment>
             <Title>Keep in touch!</Title>
-            <div>Which Javascript Tool/Framework do you like?</div>
             <form name="registrationForm" onSubmit={handleSubmit(submitSecondStep)}>
                 <Field
                     name="emailNotifications"
@@ -33,7 +38,7 @@ const ThirdStep = props => {
                 <Field
                     name="AcceptTerms"
                     title={'Accept Terms & conditions'}
-                    component={({input, meta: {touched, error}, title}) => <span>{title}<input {...input} value={true} type="checkbox" />{touched && error}</span>}
+                    component={({input, meta: {touched, error}, title}) => <SpacedDiv>{title}<input {...input} value={true} checked={input.value === true} type="checkbox" />{touched && error}</SpacedDiv>}
                     validate={ required }
                 />
             <NavigationButtons backFunc={prevStep}/>
@@ -45,5 +50,5 @@ const ThirdStep = props => {
 export default reduxForm({
     form: 'registrationForm',
     destroyOnUnmount: false,
-    initialValues: { emailNotifications: true }
+    initialValues: { emailNotifications: '1' }
   })(ThirdStep)

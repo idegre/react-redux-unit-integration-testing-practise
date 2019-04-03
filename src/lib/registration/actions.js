@@ -5,6 +5,7 @@ import constants from './constants'
 const saveValues = createAction(constants.SAVE_VALUES, values => ({ values: values }));
 
 export const setValues = (values, history) => dispatch => {
+    console.log(values)
     dispatch(saveValues(values))
     history.push({
         pathname:'/finalize',

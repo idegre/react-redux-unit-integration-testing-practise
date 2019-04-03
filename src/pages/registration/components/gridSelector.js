@@ -10,6 +10,8 @@ const Holder = styled.div`
 const Grid = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin: 20px 0px 0px;
     flex-wrap: wrap;
     width: 100%;
 `
@@ -21,6 +23,7 @@ const Error = styled.div`
 const SingleOption = styled.div`
     min-width: 100px;
     padding: 10px;
+    border-radius: 5px;
     display: flex;
     background-color: ${({selected}) => selected ? 'black' : 'white'};
     color: ${({selected}) => selected ? 'white' : 'black'};

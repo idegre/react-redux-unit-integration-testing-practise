@@ -5,10 +5,13 @@ const Holder = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 40px 0px;
     input {
+        margin-top: 10px;
         width: 100%;
     }
     textarea {
+        margin-top: 10px;
         width: 100%;
     }
 `

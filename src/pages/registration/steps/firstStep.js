@@ -3,7 +3,7 @@ import { Title } from 'utils/styled'
 import FormTextField from 'utils/components/formTextField'
 import NavigationButtons from '../components/navigationButtons'
 import { reduxForm, Field } from 'redux-form'
-import { required } from 'utils/formValidations'
+import { required, email } from 'utils/formValidations'
 
 const FirstStep = props => {
     const { handleSubmit, nextStep, prevStep } = props
@@ -20,13 +20,15 @@ const FirstStep = props => {
                         title="Full Name"
                         component={ FormTextField }
                         validate={ required }
+                        required
                     />
                     <Field
                         name="email"
                         type="text"
                         title="Email"
-                        validate={ required }
+                        validate={ [required, email] }
                         component={ FormTextField }
+                        required
                     />
                     <Field
                         name="jobDescription"

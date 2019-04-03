@@ -5,7 +5,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 const mapStateToProps = ({registration: { data }}) => {
-  console.log(data)
   return {
     data
   }

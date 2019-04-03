@@ -5,6 +5,7 @@ const Holder = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 30px 0px;
     input {
         width: 100%;
     }
@@ -20,7 +21,7 @@ const Error = styled.div`
 const SingleOption = styled.div`
     display: flex;
     flex-direction: row;
-    margin 4px 0px;
+    margin 10px 0px;
     input {
         width: min-content;
         margin: 2px 5px;
